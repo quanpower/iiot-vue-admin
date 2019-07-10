@@ -394,19 +394,6 @@ export const asyncRoutes = [
       }
     ]
   },
-  {
-    path: '/i18n',
-    component: Layout,
-    hidden: true,
-    children: [
-      {
-        path: 'index',
-        component: () => import('@/views/i18n-demo/index'),
-        name: 'I18n',
-        meta: { title: 'i18n', icon: 'international' }
-      }
-    ]
-  },
 
   {
     path: 'external-link',
