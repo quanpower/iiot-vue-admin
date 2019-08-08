@@ -45,7 +45,22 @@ module.exports = {
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_API]: ''
         }
-      }
+      },
+      [process.env.VUE_APP_DAQ_API_V1]: {
+        target: `http://127.0.0.1:5000/api`,
+        changeOrigin: true,
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_DAQ_API_V1]: ''
+        }
+      },
+      [process.env.VUE_APP_FLICKET_API_V2]: {
+        target: `http://127.0.0.1:5001/flicket-api`,
+        changeOrigin: true,
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_FLICKET_API_V2]: ''
+        }
+      },
+
     },
     after: require('./mock/mock-server.js')
   },
