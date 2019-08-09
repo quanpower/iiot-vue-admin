@@ -53,11 +53,11 @@ module.exports = {
           ['^' + process.env.VUE_APP_DAQ_API_V1]: ''
         }
       },
-      [process.env.VUE_APP_FLICKET_API_V2]: {
-        target: `http://127.0.0.1:5001/flicket-api`,
+      [process.env.VUE_APP_FLICKET_API_V1]: {
+        target: `http://127.0.0.1:6688/flicket-api`,
         changeOrigin: true,
         pathRewrite: {
-          ['^' + process.env.VUE_APP_FLICKET_API_V2]: ''
+          ['^' + process.env.VUE_APP_FLICKET_API_V1]: ''
         }
       },
 

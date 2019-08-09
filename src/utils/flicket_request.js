@@ -5,7 +5,7 @@ import { getToken } from '@/utils/auth'
 
 // create an axios instance
 const service = axios.create({
-  baseURL: process.env.VUE_APP_FLICKET_API_V2, // api 的 base_url
+  baseURL: process.env.VUE_APP_FLICKET_API_V1, // api 的 base_url
   timeout: 5000 // request timeout
 })
 
