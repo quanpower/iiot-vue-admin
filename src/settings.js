@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Smart Link Cloud',
+  title: 'Smart-Link-Cloud',
 
   /**
    * @type {boolean} true | false

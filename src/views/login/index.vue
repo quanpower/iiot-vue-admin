@@ -180,6 +180,8 @@ export default {
             .catch(() => {
               this.loading = false
             })
+          this.$store.dispatch('user/getInfo')
+
         } else {
           console.log('error submit!!')
           return false

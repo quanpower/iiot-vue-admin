@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { fetchDepartments } from '@/api/flicket'
+import { fetchCategories } from '@/api/flicket'
 import { addDepartment } from '@/api/flicket'
 
 export default {
@@ -60,7 +60,7 @@ export default {
   },
   methods: {
     fetchData() {
-      fetchDepartments(1, 30).then(response => {
+      fetchCategories(1, 30).then(response => {
         console.log('------flicket----------')
         console.log(response.data.items)
         this.list = response.data.items

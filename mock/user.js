@@ -13,13 +13,15 @@ const users = {
     roles: ['admin'],
     introduction: 'I am a super administrator',
     avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-    name: 'Super Admin'
+    name: 'Super Admin',
+    flicketToken:'sqSJ7e/jRR08JNP6O4+H1Y6yN8XBOJhL'
   },
   'editor-token': {
     roles: ['editor'],
     introduction: 'I am an editor',
     avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-    name: 'Normal Editor'
+    name: 'Normal Editor',
+    flicketToken:'sqSJ7e/jRR08JNP6O4+H1Y6yN8XBOJhL'
   }
 }
 
@@ -42,6 +44,7 @@ export default [
 
       return {
         code: 20000,
+        // data: {token:token,flicketToken:flicketToken}
         data: token
       }
     }

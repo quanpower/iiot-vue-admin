@@ -4,7 +4,9 @@ import { Message } from 'element-ui'
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
 import { getToken } from '@/utils/auth' // get token from cookie
+import { getFlicketToken } from '@/utils/auth' // get FlicketToken from cookie
 import getPageTitle from '@/utils/get-page-title'
+import axios from 'axios'
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
@@ -66,6 +68,15 @@ router.beforeEach(async(to, from, next) => {
       NProgress.done()
     }
   }
+
+  const hasFlicketToken = getFlicketToken()
+
+  if (hasFlicketToken) {
+    console.log('hasFlicketToken')
+  } else {
+    console.log(' do not have FlicketToken')
+  }
+
 })
 
 router.afterEach(() => {
