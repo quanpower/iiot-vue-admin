@@ -44,7 +44,6 @@ const actions = {
         commit('SET_TOKEN', data.token)
         setToken(data.token)
         resolve()
-
       }).catch(error => {
         reject(error)
       })
@@ -64,6 +63,8 @@ const actions = {
         }
 
         const { roles, name, avatar, introduction, flicketToken } = data
+
+        console.log(flicketToken)
 
         // roles must be a non-empty array
         if (!roles || roles.length <= 0) {

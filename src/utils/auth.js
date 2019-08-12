@@ -27,32 +27,3 @@ export function removeFlicketToken() {
   return Cookies.remove(FlicketKey)
 }
 
-
-// http --auth "admin":"caojing1010" POST http://127.0.0.1:6688/flicket-api/tokens
-
-
-// axios.post('/user', {
-//     firstName: 'Fred',
-//     lastName: 'Flintstone'
-//   })
-//   .then(function (response) {
-//     console.log(response);
-//   })
-//   .catch(function (error) {
-//     console.log(error);
-//   });
-
-
-// axios({
-//       method: 'post',
-//       url: 'http://127.0.0.1:6688/flicket-api/tokens',
-//       auth: {
-//         username: 'admin',
-//         password: 'caojing1010'
-//       }
-//         }).then(result=>{
-//           console.log(result.data);
-//         })
-//         .catch(error=>{
-//         	cosole.log(error);
-//         });
