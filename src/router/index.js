@@ -14,6 +14,7 @@ import nestedRouter from './modules/nested'
 import equipmentRouter from './modules/equipment'
 import runningStatusRouter from './modules/running-status'
 import ticketRouter from './modules/ticket'
+import topoRouter from './modules/topo'
 
 /** note: sub-menu only appear when children.length>=1
  *  detail see  https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
@@ -157,6 +158,7 @@ export const asyncRoutes = [
   /** when your routing map is too long, you can split it into small modules **/
   equipmentRouter,
   runningStatusRouter,
+  topoRouter,
   ticketRouter,
   // componentsRouter,
   chartsRouter,

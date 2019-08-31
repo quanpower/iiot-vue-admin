@@ -20,6 +20,7 @@ export function logout() {
 }
 
 export function getUserInfo(token) {
+  console.log('----token is:----', token)
   return request({
     url: '/user/info',
     method: 'get',

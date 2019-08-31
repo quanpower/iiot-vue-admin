@@ -2,8 +2,8 @@ import axios from 'axios'
 
 // http --auth "admin":"caojing1010" POST http://127.0.0.1:6688/flicket-api/tokens
 
-async function fetchFlicketToken() {
-  await axios({
+function fetchFlicketToken() {
+  return axios({
     method: 'post',
     url: 'http://127.0.0.1:6688/flicket-api/tokens',
     auth: {
@@ -19,12 +19,12 @@ async function fetchFlicketToken() {
       //   return result.data;
       // })
       .then(res => {
-        console.log('----res.data:-----', res.data.token);
+        console.log('----res.data.token:-----', res.data.token);
         return res.data.token;
-      })
-      .catch(error=> {
-       console.log(error);
       });
+      // .catch(error=> {
+      //  console.log(error);
+      // });
 }
 
 
@@ -56,8 +56,8 @@ const users = {
     introduction: 'I am a super administrator',
     avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
     name: 'Super Admin',
-    flicketToken: fetchFlicketToken()
-    // flicketToken: 'k7Wyzsq0D2Yql+LneRd1GChyGE7VGDFQ'
+    // flicketToken: fetchFlicketToken()
+    flicketToken: 'k7Wyzsq0D2Yql+LneRd1GChyGE7VGDFQ'
   },
   'editor-token': {
     roles: ['editor'],

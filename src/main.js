@@ -13,6 +13,9 @@ import App from './App'
 import store from './store'
 import router from './router'
 
+import { go } from 'gojs'
+
+
 import i18n from './lang' // internationalization
 import './icons' // icon
 import './permission' // permission control

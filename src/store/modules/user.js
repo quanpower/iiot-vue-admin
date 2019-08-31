@@ -4,7 +4,8 @@ import { getFlicketToken, setFlicketToken, removeFlicketToken } from '@/utils/au
 import router, { resetRouter } from '@/router'
 
 const state = {
-  token: getToken(),
+  // token: getToken(),
+  token: 'admin-token',
   flicketToken: getFlicketToken(),
   name: '',
   avatar: '',
@@ -55,16 +56,13 @@ const actions = {
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
       getInfo(state.token).then(response => {
-        const { data } = response
-        console.log('------getInfo-----:', data)
+        const { code, data } = response.data
 
         if (!data) {
           reject('Verification failed, please Login again.')
         }
 
         const { roles, name, avatar, introduction, flicketToken } = data
-
-        console.log(flicketToken)
 
         // roles must be a non-empty array
         if (!roles || roles.length <= 0) {
@@ -77,6 +75,7 @@ const actions = {
         commit('SET_INTRODUCTION', introduction)
         commit('SET_FLICKET_TOKEN', flicketToken)
         setFlicketToken(flicketToken)
+        
         resolve(data)
       }).catch(error => {
         reject(error)

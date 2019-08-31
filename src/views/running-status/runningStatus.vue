@@ -34,16 +34,11 @@ export default{
     }
   },
 
-
-
-
-
   mounted() {
     this.initRunningStatus()
     console.log('---this.nodeDataArray-----')
     console.log(this.nodeDataArray)
     // this.load();
-
 
     const timer = setInterval(this.getRunningStatus, 5000);            
     // 通过$once来监听定时器，在beforeDestroy钩子可以被清除。

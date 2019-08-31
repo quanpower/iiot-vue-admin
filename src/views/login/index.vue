@@ -179,9 +179,12 @@ export default {
               this.loading = false
             })
             .catch(() => {
+              console.log('login error!!!')
               this.loading = false
             })
+          
           // this.$store.dispatch('user/getInfo')
+
         } else {
           console.log('error submit!!')
           return false
