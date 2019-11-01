@@ -8,7 +8,7 @@
 import GoTree from '@/components/GoJs/GoTree'
 
 export default {
-  name: 'hello',
+  name: 'tree',
   components: { GoTree }
 }
 </script>

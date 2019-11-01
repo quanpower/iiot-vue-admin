@@ -13,11 +13,33 @@ const topoRouter = {
   },
   children: [
     {
-      path: 'hello',
-      component: () => import('@/views/topo/hello'),
-      name: 'hello',
-      meta: { title: 'hello', noCache: true }
+      path: 'handsome',
+      component: () => import('@/views/topo/handsome'),
+      name: 'handsome',
+      meta: { title: 'handsome', noCache: true }
+    },{
+      path: 'fabline',
+      component: () => import('@/views/topo/fabline'),
+      name: 'fabline',
+      meta: { title: 'fabline', noCache: true }
+    },{
+      path: 'customize',
+      component: () => import('@/views/topo/customize'),
+      name: 'customize',
+      meta: { title: 'customize', noCache: true }
+    },{
+    },{
+      path: 'tree',
+      component: () => import('@/views/topo/tree'),
+      name: 'tree',
+      meta: { title: 'tree', noCache: true }
+    },{
+      path: 'konva',
+      component: () => import('@/views/topo/konva'),
+      name: 'konva',
+      meta: { title: 'konva', noCache: true }
     },
+
   ]
 }
 

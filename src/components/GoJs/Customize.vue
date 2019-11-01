@@ -211,9 +211,6 @@ export default {
       )
     );
 
-
-    
-
     mySelf.myDiagram.nodeTemplate.selectionAdornmentTemplate = MAKE(
       go.Adornment,
       "Spot",

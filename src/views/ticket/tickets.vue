@@ -15,7 +15,6 @@
         {{ scope.row.id }}
       </template>
     </el-table-column>
-
   </el-table>
 </template>
 

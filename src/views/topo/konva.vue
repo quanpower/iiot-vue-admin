@@ -1,15 +1,15 @@
 <template>
   <div class="chart-container">
-    <go-tree />
+    <konva />
   </div>
 </template>
 
 <script>
-import GoTree from '@/components/GoJs/GoTree'
+import Konva from '@/components/Konvajs/Konva'
 
 export default {
-  name: 'hello',
-  components: { GoTree }
+  name: 'konva',
+  components: { Konva }
 }
 </script>
 

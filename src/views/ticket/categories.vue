@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <el-table :data="list" style="width: 100%;padding-top: 15px;">
       <el-table-column label="Link" min-width="200">
         <template slot-scope="scope">
@@ -25,7 +24,6 @@
         </el-form-item>
       </el-form>
     </div>
-
   </div>
 </template>
 

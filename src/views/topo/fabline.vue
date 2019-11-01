@@ -1,15 +1,15 @@
 <template>
   <div class="chart-container">
-    <go-tree />
+    <fab-line />
   </div>
 </template>
 
 <script>
-import GoTree from '@/components/GoJs/GoTree'
+import FabLine from '@/components/GoJs/FabLine'
 
 export default {
-  name: 'hello',
-  components: { GoTree }
+  name: 'fab_line',
+  components: { FabLine }
 }
 </script>
 

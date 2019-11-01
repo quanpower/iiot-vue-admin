@@ -1,15 +1,15 @@
 <template>
   <div class="chart-container">
-    <go-tree />
+    <customize />
   </div>
 </template>
 
 <script>
-import GoTree from '@/components/GoJs/GoTree'
+import Customize from '@/components/GoJs/Customize'
 
 export default {
-  name: 'hello',
-  components: { GoTree }
+  name: 'customize1',
+  components: { Customize }
 }
 </script>
 
