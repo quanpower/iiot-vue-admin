@@ -4,9 +4,7 @@ import { Message } from 'element-ui'
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
 import { getToken } from '@/utils/auth' // get token from cookie
-import { getFlicketToken } from '@/utils/auth' // get FlicketToken from cookie
 import getPageTitle from '@/utils/get-page-title'
-import axios from 'axios'
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
@@ -21,8 +19,6 @@ router.beforeEach(async(to, from, next) => {
 
   // determine whether the user has logged in
   const hasToken = getToken()
-
-  console.log('hasToken:', hasToken)
 
   if (hasToken) {
     if (to.path === '/login') {
@@ -40,11 +36,10 @@ router.beforeEach(async(to, from, next) => {
           // note: roles must be a object array! such as: ['admin'] or ,['developer','editor']
           const { roles } = await store.dispatch('user/getInfo')
 
-
-          console.log('-----roles is :----', roles)
-
           // generate accessible routes map based on roles
           const accessRoutes = await store.dispatch('permission/generateRoutes', roles)
+
+          console.log(accessRoutes)
 
           // dynamically add accessible routes
           router.addRoutes(accessRoutes)
@@ -54,7 +49,7 @@ router.beforeEach(async(to, from, next) => {
           next({ ...to, replace: true })
         } catch (error) {
           // remove token and go to login page to re-login
-          console.log('has error:', error)
+          console.log(error)
           await store.dispatch('user/resetToken')
           Message.error(error || 'Has Error')
           next(`/login?redirect=${to.path}`)
@@ -74,15 +69,6 @@ router.beforeEach(async(to, from, next) => {
       NProgress.done()
     }
   }
-
-  const hasFlicketToken = getFlicketToken()
-
-  if (hasFlicketToken) {
-    console.log('hasFlicketToken')
-  } else {
-    console.log(' do not have FlicketToken')
-  }
-
 })
 
 router.afterEach(() => {

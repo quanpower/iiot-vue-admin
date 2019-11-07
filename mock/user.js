@@ -1,45 +1,3 @@
-import axios from 'axios'
-
-// http --auth "admin":"caojing1010" POST http://127.0.0.1:6688/flicket-api/tokens
-
-function fetchFlicketToken() {
-  return axios({
-    method: 'post',
-    url: 'http://127.0.0.1:6688/flicket-api/tokens',
-    auth: {
-      username: 'admin',
-      password: 'caojing1010'
-    }
-      })
-      // .then(result=> {
-      //   // console.log('result.data:', result.data);
-      //   console.log('----result.data.token-----:', result.data);
-      //   console.log('-----111111------');
-
-      //   return result.data;
-      // })
-      .then(res => {
-        console.log('----res.data.token:-----', res.data.token);
-        return res.data.token;
-      });
-      // .catch(error=> {
-      //  console.log(error);
-      // });
-}
-
-
-// function fetchFlicketToken() {
-//     axios.post('http://127.0.0.1:6688/flicket-api/tokens', {
-//         firstName: 'Fred',
-//         lastName: 'Flintstone'
-//       })
-//       .then(function (response) {
-//         console.log(response);
-//       })
-//       .catch(function (error) {
-//         console.log(error);
-//       });
-// }
 
 const tokens = {
   admin: {
@@ -55,16 +13,13 @@ const users = {
     roles: ['admin'],
     introduction: 'I am a super administrator',
     avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-    name: 'Super Admin',
-    // flicketToken: fetchFlicketToken()
-    flicketToken: 'k7Wyzsq0D2Yql+LneRd1GChyGE7VGDFQ'
+    name: 'Super Admin'
   },
   'editor-token': {
     roles: ['editor'],
     introduction: 'I am an editor',
     avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-    name: 'Normal Editor',
-    flicketToken: 'mK23K5HwD/q82YIuUXQVNuO7GUa87hlE'
+    name: 'Normal Editor'
   }
 }
 
@@ -87,7 +42,6 @@ export default [
 
       return {
         code: 20000,
-        // data: {token:token,flicketToken:flicketToken}
         data: token
       }
     }
@@ -99,10 +53,7 @@ export default [
     type: 'get',
     response: config => {
       const { token } = config.query
-      console.log('----token-----:', token)
-
       const info = users[token]
-      console.log('---info----:', info)
 
       // mock error
       if (!info) {

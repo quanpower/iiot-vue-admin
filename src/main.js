@@ -14,7 +14,6 @@ import store from './store'
 import router from './router'
 
 import { go } from 'gojs'
-import VueKonva from 'vue-konva'
 
 import i18n from './lang' // internationalization
 import './icons' // icon
@@ -40,8 +39,6 @@ Vue.use(Element, {
   size: Cookies.get('size') || 'medium', // set element-ui default size
   i18n: (key, value) => i18n.t(key, value)
 })
-
-Vue.use(VueKonva)
 
 // register global utility filters
 Object.keys(filters).forEach(key => {

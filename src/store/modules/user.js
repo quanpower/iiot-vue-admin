@@ -1,12 +1,9 @@
 import { login, logout, getInfo } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
-import { getFlicketToken, setFlicketToken, removeFlicketToken } from '@/utils/auth'
 import router, { resetRouter } from '@/router'
 
 const state = {
-  // token: getToken(),
-  token: 'admin-token',
-  flicketToken: getFlicketToken(),
+  token: getToken(),
   name: '',
   avatar: '',
   introduction: '',
@@ -16,9 +13,6 @@ const state = {
 const mutations = {
   SET_TOKEN: (state, token) => {
     state.token = token
-  },
-  SET_FLICKET_TOKEN: (state, flicketToken) => {
-    state.flicketToken = flicketToken
   },
   SET_INTRODUCTION: (state, introduction) => {
     state.introduction = introduction
@@ -41,14 +35,12 @@ const actions = {
     return new Promise((resolve, reject) => {
       login({ username: username.trim(), password: password }).then(response => {
         const { data } = response
-        console.log('login-data:', data)
         commit('SET_TOKEN', data.token)
         setToken(data.token)
         resolve()
       }).catch(error => {
         reject(error)
       })
-
     })
   },
 
@@ -56,13 +48,13 @@ const actions = {
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
       getInfo(state.token).then(response => {
-        const { code, data } = response.data
+        const { data } = response
 
         if (!data) {
           reject('Verification failed, please Login again.')
         }
 
-        const { roles, name, avatar, introduction, flicketToken } = data
+        const { roles, name, avatar, introduction } = data
 
         // roles must be a non-empty array
         if (!roles || roles.length <= 0) {
@@ -73,9 +65,6 @@ const actions = {
         commit('SET_NAME', name)
         commit('SET_AVATAR', avatar)
         commit('SET_INTRODUCTION', introduction)
-        commit('SET_FLICKET_TOKEN', flicketToken)
-        setFlicketToken(flicketToken)
-        
         resolve(data)
       }).catch(error => {
         reject(error)
@@ -84,15 +73,18 @@ const actions = {
   },
 
   // user logout
-  logout({ commit, state }) {
+  logout({ commit, state, dispatch }) {
     return new Promise((resolve, reject) => {
       logout(state.token).then(() => {
         commit('SET_TOKEN', '')
-        commit('SET_FLICKET_TOKEN', '')
         commit('SET_ROLES', [])
         removeToken()
-        removeFlicketToken()
         resetRouter()
+
+        // reset visited views and cached views
+        // to fixed https://github.com/PanJiaChen/vue-element-admin/issues/2485
+        dispatch('tagsView/delAllViews', null, { root: true })
+
         resolve()
       }).catch(error => {
         reject(error)

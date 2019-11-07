@@ -33,13 +33,7 @@ const topoRouter = {
       component: () => import('@/views/topo/tree'),
       name: 'tree',
       meta: { title: 'tree', noCache: true }
-    },{
-      path: 'konva',
-      component: () => import('@/views/topo/konva'),
-      name: 'konva',
-      meta: { title: 'konva', noCache: true }
     },
-
   ]
 }
 
