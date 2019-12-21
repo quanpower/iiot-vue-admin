@@ -1,8 +1,8 @@
 {
-  "name": "vue-element-admin",
-  "version": "4.2.1",
+  "name": "smart-link-admin",
+  "version": "1.2.1",
   "description": "A magical vue admin. An out-of-box UI solution for enterprise applications. Newest development stack of vue. Lots of awesome features",
-  "author": "Pan <panfree23@gmail.com>",
+  "author": "William<quanpower@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "vue-cli-service serve",
@@ -27,6 +27,9 @@
     ]
   },
   "keywords": [
+    "iot",
+    "iiot",
+    "SCADA",
     "vue",
     "admin",
     "dashboard",
@@ -37,10 +40,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PanJiaChen/vue-element-admin.git"
+    "url": "git+https://github.com/quanpower/iiot-vue-admin.git"
   },
   "bugs": {
-    "url": "https://github.com/PanJiaChen/vue-element-admin/issues"
+    "url": "https://github.com/quanpower/iiot-vue-admin/issues"
   },
   "dependencies": {
     "axios": "0.18.1",
@@ -53,9 +56,12 @@
     "file-saver": "2.0.1",
     "fuse.js": "3.4.4",
     "gojs": "^2.0.13",
+    "iview": "^3.5.3",
     "js-cookie": "2.2.0",
     "jsonlint": "1.6.3",
     "jszip": "3.2.1",
+    "konva": "^4.0.16",
+    "lodash": "^4.17.15",
     "normalize.css": "7.0.0",
     "nprogress": "0.2.0",
     "path-to-regexp": "2.4.0",
@@ -66,6 +72,7 @@
     "vue": "2.6.10",
     "vue-count-to": "1.0.13",
     "vue-i18n": "7.3.2",
+    "vue-konva": "^2.0.11",
     "vue-router": "3.0.2",
     "vue-splitpane": "1.0.4",
     "vuedraggable": "2.20.0",
@@ -91,6 +98,8 @@
     "eslint-plugin-vue": "5.2.2",
     "html-webpack-plugin": "3.2.0",
     "husky": "1.3.1",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
     "lint-staged": "8.1.5",
     "mockjs": "1.0.1-beta3",
     "node-sass": "^4.9.0",

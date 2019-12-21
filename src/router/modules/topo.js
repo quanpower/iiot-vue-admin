@@ -28,7 +28,6 @@ const topoRouter = {
       name: 'customize',
       meta: { title: 'customize', noCache: true }
     },{
-    },{
       path: 'tree',
       component: () => import('@/views/topo/tree'),
       name: 'tree',
